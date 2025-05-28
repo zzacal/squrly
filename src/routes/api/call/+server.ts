@@ -11,15 +11,14 @@ export const POST: RequestHandler = async ({request}) => {
     
     const {status, statusText, headers} = response;
     const responseHeaders = Object.fromEntries([...headers].map(([key, value]) => ([key, value])));
-    let body;
+    const body = await response.text();
     
-    if(responseHeaders["content-type"]?.includes("application/json")) {
-      body = await response.json()
-    }
-      
-    
-    return json({status, statusText, body, headers: responseHeaders});
-
+    return json({
+      status, 
+      statusText, 
+      body, 
+      headers: responseHeaders
+    });
   } catch (ex) {
     console.error(ex);
     return error(2);

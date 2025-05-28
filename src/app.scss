@@ -1,0 +1,23 @@
+@use "./colors.scss" as colors;
+
+body {
+  background-color: colors.$background-color;
+  color: colors.$font-color;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 1rem;
+  color: colors.$primary;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0;
+  color: colors.$secondary;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1rem;
+}

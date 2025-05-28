@@ -2,7 +2,7 @@
   type CallResult = {
 	  status: number;
 	  statusText: string;
-	  headers: Headers;
+	  headers: {[k: string]: string};
 	  body?: any;
   }
   
